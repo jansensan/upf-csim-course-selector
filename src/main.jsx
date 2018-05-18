@@ -12,7 +12,7 @@ require('./csim-course-selector.scss');
 
 
 ReactDOM.render(
-  <div className="csim-course-selector">
+  <div className="centered csim-course-selector">
     <div className="selected-courses-col">
       <SelectedCoursesList/>
     </div>
