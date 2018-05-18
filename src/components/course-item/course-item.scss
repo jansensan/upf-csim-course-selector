@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+
+.course-item {
+  display: block;
+
+  td {
+    padding: 8px;
+  }
+
+  .course-btn {
+    border: 0;
+    padding: 0;
+    background-color: $nearWhite;
+    font-size: 10pt;
+    color: $nearBlack;
+    cursor: pointer;
+
+    &:active {
+      background-color: $nearBlack;
+      color: $nearWhite;
+    }
+  }
+
+  .title {
+    width: 400px;
+  }
+
+  .trimester, .pool {
+    width: 60px;
+  }
+}

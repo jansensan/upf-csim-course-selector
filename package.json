@@ -1,0 +1,37 @@
+{
+  "name": "upf-csim-course-selector",
+  "description": "UPF CSIM Course Selector",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://jansensan@github.com/jansensan/upf-csim-course-selector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jansensan/upf-csim-course-selector/issues"
+  },
+  "homepage": "https://github.com/jansensan/upf-csim-course-selector#readme",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "signals": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sass": "^4.0.1",
+    "node-sass": "^4.9.0",
+    "require-dir": "^1.0.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.3"
+  }
+}

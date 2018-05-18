@@ -1,0 +1,42 @@
+body, html {
+  margin: 0;
+  background: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #272727; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.125em 0;
+  overflow-wrap: break-word;
+  line-height: 1;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 800; }
+
+h1 {
+  letter-spacing: -0.9pt;
+  font-size: 2.5em; }
+
+h2 {
+  font-size: 1.9em; }
+
+section {
+  display: table;
+  margin: 24px 0; }
+
+p, pre {
+  line-height: 1.333;
+  margin: 0.45em 0;
+  text-align: left; }
+
+p {
+  hyphens: auto;
+  word-break: normal; }
+
+a {
+  text-decoration: none;
+  color: #5474dc; }
+  a:hover {
+    text-decoration: underline; }
+
+.centered {
+  position: relative;
+  margin: 0 auto; }

@@ -1,0 +1,11 @@
+.csim-course-selector {
+  padding: 32px;
+  
+  .selected-courses-col,
+  .courses-pool-col {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    width: 50%;
+  }
+}
