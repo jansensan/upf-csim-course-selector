@@ -5,13 +5,29 @@
   display: block;
   background-color: $nearWhite;
   font-size: 10pt;
-
+  line-height: 1.25;
+  
   &.course-item-header {
+    font-size: 11pt;
     font-weight: bold;
   }
 
   td {
     padding: 8px;
+
+    &.title {
+      width: 360px;
+      text-align: left;
+    }
+
+    &.external-link {
+      width: 16px;
+    }
+
+    &.trimester, &.pool {
+      width: 60px;
+      text-align: center;
+    }
   }
 
   .action-btn {
@@ -32,15 +48,5 @@
         fill: $nearWhite;
       }
     }
-  }
-
-  .title {
-    width: 360px;
-    text-align: left;
-  }
-
-  .trimester, .pool {
-    width: 60px;
-    text-align: center;
   }
 }

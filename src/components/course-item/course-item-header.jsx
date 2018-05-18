@@ -17,11 +17,11 @@ export default class CourseItem extends Component {
           <tbody>
             <tr>
               <td className="title">Course Title</td>
+              <td className="external-link"></td>
               <td className="trimester">Trimester</td>
               <td className="pool">Pool</td>
               <td className="add"></td>
               <td className="remove"></td>
-              <td className="external-link"></td>
             </tr>
           </tbody>
         </table>
