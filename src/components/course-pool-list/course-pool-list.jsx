@@ -13,6 +13,8 @@ export default class CoursePoolList extends Component {
     this.state = {
       coursePool: CoursePool
     };
+
+    ProgrammeModel.updated.add(this.onProgrammeModelUpdated, this);
   }
 
   // react methods definitions
@@ -27,7 +29,7 @@ export default class CoursePoolList extends Component {
               key={course.code}
               courseNumber={course.code}
               hasAddButton={true}
-              onAddClicked={this.onItemClicked.bind(this, course)}
+              onAddClicked={this.onCourseAdded.bind(this, course)}
             ></CourseItem>
           )
         }
@@ -36,8 +38,11 @@ export default class CoursePoolList extends Component {
   }
 
   // event handlers
-  onItemClicked(course) {
+  onCourseAdded(course) {
     ProgrammeModel.selectCourse(course);
+  }
+
+  onProgrammeModelUpdated() {
     this.setState(this.state);
   }
 }

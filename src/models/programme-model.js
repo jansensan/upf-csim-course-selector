@@ -4,6 +4,9 @@ import signals from 'signals';
 import Courses from '../constants/courses.js';
 import Trimesters from '../constants/trimesters.js';
 
+// services
+import CoursesService from '../services/courses-service.js';
+
 // models
 import TrimesterModel from './trimester-model.js';
 import CoursePool from './course-pool.js';
@@ -64,6 +67,13 @@ function addCourseToTrimester(course) {
   }
 }
 
+function deselectCourse(courseNumber) {
+  let course = CoursesService.getCourseByCourseNumber(courseNumber);
+  CoursePool.deselect(course.code);
+  removeCourseFromTrimester(course);
+  ProgrammeModel.updated.dispatch();
+}
+
 function getCreditsSum() {
   return ProgrammeModel.fallModel.getNumCredits() +
     ProgrammeModel.winterModel.getNumCredits() +
@@ -90,13 +100,31 @@ function getNumCoursesFromPool3() {
   return coursesFromPool3.length;
 }
 
-function selectCourse(course) {
-  addCourseToTrimester(course);
-  // update course pool
-  CoursePool.select(course.code);
-  ProgrammeModel.updated.dispatch();
+function removeCourseFromTrimester(course) {
+  switch (course.trimester) {
+    case Trimesters.FALL:
+      ProgrammeModel.fallModel.courses = _.pull(
+        ProgrammeModel.fallModel.courses,
+        course.code
+      );
+      break;
+    case Trimesters.WINTER:
+      ProgrammeModel.winterModel.courses = _.pull(
+        ProgrammeModel.winterModel.courses,
+        course.code
+      );
+      break;
+    case Trimesters.SUMMER:
+      ProgrammeModel.summerModel.courses = _.pull(
+        ProgrammeModel.summerModel.courses,
+        course.code
+      );
+      break;
+  }
 }
 
-function deselectCourse() {
+function selectCourse(course) {
+  addCourseToTrimester(course);
+  CoursePool.select(course.code);
   ProgrammeModel.updated.dispatch();
 }

@@ -12,7 +12,8 @@ export default class FallCoursesList extends Component {
     this.state = {
       programmeModel: ProgrammeModel,
     };
-    this.state.programmeModel.updated.add(this.onProgrammeModelUpdated, this);
+
+    ProgrammeModel.updated.add(this.onProgrammeModelUpdated, this);
   }
 
 
@@ -28,6 +29,7 @@ export default class FallCoursesList extends Component {
               key={courseNumber}
               courseNumber={courseNumber}
               hasRemoveButton={true}
+              onRemoveClicked={this.onCourseRemoved.bind(this, courseNumber)}
             ></CourseItem>
           )
         }
@@ -47,6 +49,10 @@ export default class FallCoursesList extends Component {
 
 
   // event handlers
+  onCourseRemoved(courseNumber) {
+    ProgrammeModel.deselectCourse(courseNumber);
+  }
+
   onProgrammeModelUpdated() {
     this.setState(this.state);
   }
