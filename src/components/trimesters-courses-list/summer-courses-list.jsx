@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import ProgrammeModel from '../../models/programme-model.js';
+
+import CourseItemHeader from '../course-item/course-item-header.jsx';
 import CourseItem from '../course-item/course-item.jsx';
 
 
@@ -19,12 +21,13 @@ export default class SummerCoursesList extends Component {
     return (
       <section className="summer-courses-list">
         <h3>Summer 2019 Trimester ({this.getNumCredits()} ECTS)</h3>
-        <CourseItem></CourseItem>
+        <CourseItemHeader></CourseItemHeader>
         {
           this.getCourses().map((courseNumber, i) =>
             <CourseItem
               key={courseNumber}
               courseNumber={courseNumber}
+              hasRemoveButton={true}
             ></CourseItem>
           )
         }

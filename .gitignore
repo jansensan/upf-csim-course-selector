@@ -6,4 +6,5 @@
 
 ### PROJECT-SPECIFIC FILES ###
 .vscode
+assets
 node_modules

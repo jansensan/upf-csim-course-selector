@@ -3,30 +3,44 @@
 
 .course-item {
   display: block;
+  background-color: $nearWhite;
+  font-size: 10pt;
+
+  &.course-item-header {
+    font-weight: bold;
+  }
 
   td {
     padding: 8px;
   }
 
-  .course-btn {
+  .action-btn {
     border: 0;
-    padding: 0;
-    background-color: $nearWhite;
-    font-size: 10pt;
-    color: $nearBlack;
+    padding: 8px;
     cursor: pointer;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: $nearBlack;
+    }
 
     &:active {
       background-color: $nearBlack;
-      color: $nearWhite;
+
+      svg {
+        fill: $nearWhite;
+      }
     }
   }
 
   .title {
-    width: 400px;
+    width: 360px;
+    text-align: left;
   }
 
   .trimester, .pool {
     width: 60px;
+    text-align: center;
   }
 }

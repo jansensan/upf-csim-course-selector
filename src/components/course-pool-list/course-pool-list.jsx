@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import CoursePool from '../../models/course-pool.js';
 import ProgrammeModel from '../../models/programme-model.js';
 
+import CourseItemHeader from '../course-item/course-item-header.jsx';
 import CourseItem from '../course-item/course-item.jsx';
 
 
@@ -19,13 +20,14 @@ export default class CoursePoolList extends Component {
     return (
       <section>
         <h2>Course Pool</h2>
-        <CourseItem></CourseItem>
+        <CourseItemHeader></CourseItemHeader>
         {
           this.state.coursePool.available.map((course) =>
             <CourseItem
               key={course.code}
               courseNumber={course.code}
-              onClick={this.onItemClicked.bind(this, course)}
+              hasAddButton={true}
+              onAddClicked={this.onItemClicked.bind(this, course)}
             ></CourseItem>
           )
         }
