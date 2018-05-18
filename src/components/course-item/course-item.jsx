@@ -23,6 +23,7 @@ export default class CourseItem extends Component {
     }
   }
 
+
   // react methods definitions
   render() {
     return (
@@ -52,7 +53,7 @@ export default class CourseItem extends Component {
               }
 
               {
-                (this.props.hasRemoveButton) ?
+                (this.hasRemoveButton()) ?
                   <td className="remove">
                     <button
                       type="button"
@@ -84,5 +85,11 @@ export default class CourseItem extends Component {
         </table>
       </div>
     );
+  }
+
+
+  // methods definitions
+  hasRemoveButton() {
+    return this.props.hasRemoveButton && !this.state.data.isMandatory;
   }
 }
