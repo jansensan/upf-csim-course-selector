@@ -21,7 +21,7 @@ export default class SelectedCoursesList extends Component {
   render() {
     return (
       <section className="selected-courses">
-        <h2>Selected Classes ({ProgrammeModel.getCreditsSum()}/40 ECTS)</h2>
+        <h2>Selected Courses ({ProgrammeModel.getCreditsSum()}/40 ECTS)</h2>
         <ul>
           <li>Main Optional Pool (min. 3): {ProgrammeModel.getNumCoursesFromPool2()}/3</li>
           <li>Optional Expansion Pool (max. 1): {ProgrammeModel.getNumCoursesFromPool3()}/1</li>
