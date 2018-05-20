@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
 import ProgrammeModel from '../../models/programme-model.js';
+import CoursesService from '../../services/courses-service.js';
 
 import FallCoursesList from '../trimesters-courses-list/fall-courses-list.jsx';
 import WinterCoursesList from '../trimesters-courses-list/winter-courses-list.jsx';
 import SummerCoursesList from '../trimesters-courses-list/summer-courses-list.jsx';
+
+
+require('./selected-courses-list.scss');
 
 
 export default class SelectedCoursesList extends Component {
@@ -20,7 +24,7 @@ export default class SelectedCoursesList extends Component {
   // react methods definitions
   render() {
     return (
-      <section className="selected-courses">
+      <section className="selected-courses-list">
         <h2>Selected Courses ({ProgrammeModel.getCreditsSum()}/40 ECTS)</h2>
         <ul>
           <li>Main Optional Pool (min. 3): {ProgrammeModel.getNumCoursesFromPool2()}/3</li>
@@ -30,6 +34,12 @@ export default class SelectedCoursesList extends Component {
         <FallCoursesList />
         <WinterCoursesList />
         <SummerCoursesList />
+
+        <button
+          type="button"
+          className="save-btn"
+          onClick={this.onSelectionSaved}
+        >Save Course Selection</button>
       </section>
     )
   }
@@ -38,5 +48,16 @@ export default class SelectedCoursesList extends Component {
   // event handlers
   onProgrammeModelUpdated() {
     this.setState(this.state);
+  }
+
+  onSelectionSaved() {
+    CoursesService.saveSelectedCourses()
+      .then(
+        function onSavedSuccessfully(response) {},
+        function onFailedToSave(error) {
+          console.warn('Unable to save course selection');
+          console.table(error);
+        }
+      );
   }
 }

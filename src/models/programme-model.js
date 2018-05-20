@@ -46,11 +46,22 @@ function init() {
   _.forEach(
     mandatoryCourses,
     function(course) {
-      addCourseToTrimester(course);
-      // update course pool
-      CoursePool.select(course.code);
+      selectCourse(course);
     }
   );
+
+  // fetch data saved on db
+  CoursesService.fetchSelectedCourses()
+    .then(function(codeList) {
+      // update selected courses from obtained data
+      _.forEach(
+        codeList,
+        function(code) {
+          let course = CoursesService.getCourseByCourseNumber(code);
+          selectCourse(course);
+        }
+      );
+    });
 }
 
 function addCourseToTrimester(course) {

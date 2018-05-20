@@ -1,0 +1,14 @@
+@import "../../styles/variables.scss";
+
+
+.selected-courses-list {
+  .save-btn {
+    padding: 8px 16px;
+    background-color: $nearBlack;
+    border: 0;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+  }
+}
