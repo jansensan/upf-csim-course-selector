@@ -53,8 +53,11 @@ export default class SelectedCoursesList extends Component {
   onSelectionSaved() {
     CoursesService.saveSelectedCourses()
       .then(
-        function onSavedSuccessfully(response) {},
+        function onSavedSuccessfully(response) {
+          console.info("SelectedCoursesList#onSavedSuccessfully()");
+        },
         function onFailedToSave(error) {
+          console.info("SelectedCoursesList#onFailedToSave()");
           console.warn('Unable to save course selection');
           console.table(error);
         }

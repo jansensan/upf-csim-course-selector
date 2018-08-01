@@ -17,6 +17,8 @@ export default CoursesService;
 
 // public methods definitions
 function fetchSelectedCourses() {
+  console.info("CoursesService#fetchSelectedCourses()");
+
   let url = 'services/get-courses.php';
 
   return new Promise((resolve, reject) => {
@@ -49,6 +51,8 @@ function getSanitizedCourseCodeList(list) {
 }
 
 function saveSelectedCourses() {
+  console.info("CoursesService#saveSelectedCourses()");
+
   // prepare data to save
   let selectedCourseCodes = [];
   _.forEach(
