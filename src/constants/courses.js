@@ -55,7 +55,7 @@ let Courses = [
     url: "https://www.upf.edu/web/csim/syllabus#30877",
   },
   {
-    trimester: 2,
+    trimester: 1,
     title: "Advanced Interface Design",
     code: 30853,
     numCredits: 5,
@@ -79,7 +79,7 @@ let Courses = [
     url: "https://www.upf.edu/web/csim/syllabus#30857",
   },
   {
-    trimester: 1,
+    trimester: 2,
     title: "Real Time Interaction",
     code: 30876,
     numCredits: 5,
@@ -110,7 +110,7 @@ let Courses = [
     code: 31641,
     numCredits: 5,
     pool: 3,
-    url: "https://www.upf.edu/iis/program.html#AS",
+    url: "https://www.upf.edu/web/iis/AutonomousSystems",
   },
   {
     trimester: 1,
@@ -118,7 +118,7 @@ let Courses = [
     code: 31645,
     numCredits: 5,
     pool: 3,
-    url: "https://www.upf.edu/iis/program.html#ML",
+    url: "https://www.upf.edu/web/iis/MachineLearning",
   },
   {
     trimester: 1,
@@ -126,7 +126,7 @@ let Courses = [
     code: 31643,
     numCredits: 5,
     pool: 3,
-    url: "https://www.upf.edu/iis/program.html#MR",
+    url: "https://www.upf.edu/web/iis/MobileRobotics",
   },
   {
     trimester: 2,
@@ -134,7 +134,7 @@ let Courses = [
     code: 31642,
     numCredits: 5,
     pool: 3,
-    url: "https://www.upf.edu/iis/program.html#NL",
+    url: "https://www.upf.edu/web/iis/NaturalLanguageInteraction",
   },
   
 ];
